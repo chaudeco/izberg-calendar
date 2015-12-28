@@ -13,13 +13,15 @@ var AppLayout = LayoutView.extend({
 
   initialize: function(options) {
     this.model = options.calendarModel;
+    this.collection = options.slotsCollection;
   },
 
   regions: (options) => ({
     slots: {
       selector: '.wrapper-slots',
       regionClass: SlotsRegion,
-      collection: options.slotsCollection
+      collection: options.slotsCollection,
+      model: options.calendarModel
     },
     header: {
       selector: '.wrapper-header',
